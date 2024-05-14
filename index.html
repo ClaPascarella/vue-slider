@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    
+
+</head>
+<body>
+    <script src="https://unpkg.com/vue@3.4.27/dist/vue.global.js"></script>
+
+    <div id="app">
+
+        <div id="buttonContainer">
+            <button @click="back()">Indietro</button>
+            <button @click="next()">Avanti</button>
+            
+        </div>
+
+        <div v-for="image, i in slides" class="slide" :class="checkImageVisibility(i)">
+            <img :src="image" alt="">
+        </div>
+
+        <div id="thumbnailsContainer">
+            <img v-for="thumbnail, i in images" :class="checkImageVisibility(i)" :src="thumbnail"
+                @click="mostraSlide(i)">
+        </div>
+
+
+    </div>
+
+
+    
+
+    <script src="./main.js"></script>
+</body>
+</html>
